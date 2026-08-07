@@ -1,0 +1,74 @@
+{
+  "allowMultipleInvites": true,
+
+  "invites": [
+
+    {
+      "id": "9A-SPENSA-2027",
+
+      "class": "9A",
+
+      "school": "SMP Negeri 1 Pangkalan Kuras",
+
+      "representative": "",
+
+      "status": "pending"
+    },
+
+    {
+      "id": "9B-SPENSA-2027",
+
+      "class": "9B",
+
+      "school": "SMP Negeri 1 Pangkalan Kuras",
+
+      "representative": "",
+
+      "status": "pending"
+    },
+
+    {
+      "id": "9D-SPENSA-2027",
+
+      "class": "9D",
+
+      "school": "SMP Negeri 1 Pangkalan Kuras",
+
+      "representative": "",
+
+      "status": "pending"
+    }
+
+  ],
+
+  "collaboration": {
+
+    "title": "NineCSpensaKu Collaboration",
+
+    "description": "Haii! Selamat, kamu menjadi perwakilan untuk ajakan collaboration dari Class 9C SMP Negeri 1 Pangkalan Kuras.",
+
+    "deadline": "",
+
+    "conceptLink": "",
+
+    "uploadLink": "",
+
+    "whatsapp": "",
+
+    "requirements": [
+
+      "Follow konsep yang telah diberikan.",
+
+      "Video minimal resolusi 720p.",
+
+      "Tidak mengandung watermark.",
+
+      "Mengirim sebelum deadline.",
+
+      "Menggunakan format file MP4."
+
+    ]
+
+  }
+
+}
