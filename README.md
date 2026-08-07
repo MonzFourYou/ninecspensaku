@@ -1,102 +1,163 @@
-# 🌌 NineCSpensaKu
-
 <div align="center">
 
-<img src="assets/images/logo.png" width="180">
+<img src="assets/images/logo.png" width="220"/>
 
-### Class 9C
-### SMP Negeri 1 Pangkalan Kuras
-**Academic Year 2026/2027**
+# 🚀 NINECSPENSAKU
 
-*"Beyond The Stars, Together We Grow."*
+### 🌌 Beyond The Stars, Together We Grow.
+
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+![Status](https://img.shields.io/badge/Status-Development-blueviolet?style=flat-square)
+![Version](https://img.shields.io/badge/Version-v1.0-white?style=flat-square)
+![License](https://img.shields.io/badge/License-Education-success?style=flat-square)
+
+---
+
+### 🌍 Official Website of Class 9C
+
+**SMP Negeri 1 Pangkalan Kuras**
+
+Academic Year **2026/2027**
+
+*"Every star shines together in the same galaxy."*
 
 </div>
 
 ---
 
-## 📖 About
+# 🌌 About
 
-NineCSpensaKu adalah website resmi kelas **9C SMP Negeri 1 Pangkalan Kuras** yang dibuat sebagai pusat informasi kelas dan media collaboration antar kelas.
+**NineCSpensaKu** merupakan website resmi kelas **9C SMP Negeri 1 Pangkalan Kuras**.
 
-Website ini dibuat dengan tema **Space** yang sederhana, modern, dan responsif.
+Website ini dibuat sebagai pusat informasi kelas, media sosial, serta halaman collaboration antar kelas dengan tema **Space Universe** yang sederhana, modern, dan elegan.
 
 ---
 
-## ✨ Features
+# ✨ Features
 
-- 🌌 Space Theme
-- 📱 Responsive Design
-- 📖 About Class
+- 🚀 Beautiful Space UI
+- 🌌 Responsive Design
 - 🔗 Linktree Integration
 - 🔐 Invitation System
-- 📄 Collaboration Information
-- 📋 Requirement Status
-- ⚙️ Editable Configuration
+- 📄 Collaboration Page
+- 📋 Requirements Status
+- ⚙️ Editable JSON Configuration
+- 📱 Mobile Friendly
 
 ---
 
-## 📁 Project Structure
+# 📂 Project Structure
 
 ```text
-NineCSpensaKu/
+NineCSpensaKu
 │
-├── index.html
-├── invite.html
-├── invitation.html
+├── 📄 index.html
+├── 📄 invite.html
+├── 📄 invitation.html
 │
-├── css/
+├── 📁 css
 │   ├── style.css
 │   ├── invite.css
 │   └── invitation.css
 │
-├── js/
+├── 📁 js
 │   ├── main.js
 │   ├── invite.js
 │   └── invitation.js
 │
-├── config/
+├── 📁 assets
+│   ├── backgrounds
+│   ├── images
+│   ├── icons
+│   └── logo.png
+│
+├── 📁 config
 │   ├── settings.json
 │   ├── invite.json
 │   └── status.json
 │
-├── assets/
-│   ├── backgrounds/
-│   ├── icons/
-│   └── images/
-│
-└── README.md
+└── 📄 README.md
 ```
 
 ---
 
-## 🚀 Media Social
+# 🛸 Website Preview
 
-Access all social media through the Linktree button available on the website.
+```text
+🌌 Loading
+      │
+      ▼
+🏠 Home
+      │
+      ├── 📖 About
+      ├── 🌐 Media Social
+      └── 📨 Invitation
+                  │
+                  ▼
+          🔐 Invitation Login
+                  │
+                  ▼
+          📄 Collaboration Page
+```
 
 ---
 
-## 🤝 Collaboration
+# 🎯 Main Features
 
-Invitation page can only be accessed using a valid Invitation ID provided by Class 9C.
+✅ Space Theme
+
+✅ Glassmorphism
+
+✅ Responsive
+
+✅ Linktree Support
+
+✅ Invitation ID
+
+✅ Collaboration Management
+
+✅ Editable Config
 
 ---
 
-## 🛠️ Built With
+# 🎯 Main Features
 
-- HTML5
-- CSS3
-- JavaScript
+✅ Space Theme
+
+✅ Glassmorphism
+
+✅ Responsive
+
+✅ Linktree Support
+
+✅ Invitation ID
+
+✅ Collaboration Management
+
+✅ Editable Config
 
 ---
 
-## 👨‍💻 Developer
+# 💙 Credits
 
-Made with ❤️ by **Class 9C**
+Developed with ❤️ by
+
+## Class 9C
+### SMP Negeri 1 Pangkalan Kuras
 
 ---
 
 <div align="center">
 
-© 2026–2027 NineCSpensaKu • All Rights Reserved
+## 🌠
+
+**"We may graduate, but our memories will always orbit in the same galaxy."**
+
+---
+
+© 2026–2027 • NineCSpensaKu
 
 </div>
