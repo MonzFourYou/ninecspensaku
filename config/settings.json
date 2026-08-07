@@ -1,0 +1,23 @@
+{
+  "website": {
+    "title": "NineCSpensaKu",
+    "description": "Official Website of Class 9C",
+    "year": "2026/2027",
+    "theme": "space"
+  },
+
+  "class": {
+    "name": "NineCSpensaKu",
+    "class": "9C",
+    "school": "SMP Negeri 1 Pangkalan Kuras",
+    "motto": "Beyond The Stars, Together We Grow."
+  },
+
+  "links": {
+    "linktree": "https://linktr.ee/ninecspensaa"
+  },
+
+  "footer": {
+    "copyright": "© 2026–2027 NineCSpensaKu • All Rights Reserved"
+  }
+}
