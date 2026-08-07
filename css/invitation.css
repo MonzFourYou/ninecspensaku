@@ -1,0 +1,273 @@
+/* ===================================
+   NineCSpensaKu
+   Invitation Page Stylesheet
+=================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#090B1A;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* ==========================
+Background
+========================== */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+
+    background:
+    radial-gradient(circle at top,#243B82 0%,#090B1A 70%);
+}
+
+.stars{
+    position:absolute;
+    inset:0;
+
+    background-image:
+    radial-gradient(#ffffff 1px,transparent 1px);
+
+    background-size:45px 45px;
+
+    opacity:.18;
+}
+
+/* ==========================
+Container
+========================== */
+
+.container{
+
+max-width:900px;
+
+margin:auto;
+
+padding:40px 20px;
+
+}
+
+/* ==========================
+Hero
+========================== */
+
+.hero{
+
+text-align:center;
+
+margin-bottom:25px;
+
+}
+
+.logo{
+
+width:150px;
+
+margin-bottom:20px;
+
+}
+
+.hero h1{
+
+font-size:2rem;
+
+margin-bottom:10px;
+
+}
+
+.hero p{
+
+color:#D6D8FF;
+
+}
+
+/* ==========================
+Card
+========================== */
+
+.card{
+
+margin-bottom:20px;
+
+padding:22px;
+
+border-radius:22px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(14px);
+
+border:1px solid rgba(255,255,255,.12);
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.35);
+
+}
+
+.card h2{
+
+margin-bottom:15px;
+
+}
+
+/* ==========================
+Requirements
+========================== */
+
+#requirements{
+
+padding-left:20px;
+
+line-height:1.9;
+
+}
+
+#requirements li{
+
+margin-bottom:8px;
+
+}
+
+/* ==========================
+Status
+========================== */
+
+#status-card{
+
+padding:18px;
+
+border-radius:15px;
+
+font-weight:600;
+
+text-align:center;
+
+}
+
+/* ==========================
+Information
+========================== */
+
+.info-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+}
+
+.info-item{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:12px;
+
+background:#ffffff08;
+
+border-radius:10px;
+
+}
+
+/* ==========================
+Buttons
+========================== */
+
+.buttons{
+
+display:grid;
+
+gap:15px;
+
+margin-top:25px;
+
+}
+
+.buttons button{
+
+padding:15px;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+font-size:15px;
+
+font-weight:600;
+
+transition:.25s;
+
+}
+
+#concept-button{
+
+background:#6C63FF;
+
+color:white;
+
+}
+
+#upload-button{
+
+background:#4CAF50;
+
+color:white;
+
+}
+
+#whatsapp-button{
+
+background:#25D366;
+
+color:white;
+
+}
+
+.buttons button:hover{
+
+transform:translateY(-2px);
+
+}
+
+/* ==========================
+Responsive
+========================== */
+
+@media(max-width:768px){
+
+.logo{
+
+width:120px;
+
+}
+
+.hero h1{
+
+font-size:1.6rem;
+
+}
+
+.info-item{
+
+flex-direction:column;
+
+gap:8px;
+
+}
+
+}
