@@ -1,0 +1,37 @@
+{
+    "classes": [
+        {
+            "class": "9A",
+            "status": "pending"
+        },
+        {
+            "class": "9B",
+            "status": "submitted"
+        },
+        {
+            "class": "9C",
+            "status": "host"
+        },
+        {
+            "class": "9D",
+            "status": "pending"
+        }
+    ],
+
+    "statusText": {
+        "submitted": {
+            "title": "🟢 Requirements Submitted",
+            "description": "Terima kasih. Persyaratan collaboration telah diterima."
+        },
+
+        "pending": {
+            "title": "🔴 Requirements Not Submitted",
+            "description": "Kelas ini belum mengirimkan persyaratan collaboration."
+        },
+
+        "host": {
+            "title": "🚀 Host Class",
+            "description": "Class 9C merupakan penyelenggara collaboration."
+        }
+    }
+}
