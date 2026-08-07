@@ -1,0 +1,247 @@
+/* ===========================
+   NineCSpensaKu
+   Invitation Stylesheet
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#090B1A;
+    color:#fff;
+    min-height:100vh;
+    overflow:hidden;
+}
+
+/* ===========================
+Background
+=========================== */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    background:
+    radial-gradient(circle at top,#243B82 0%,#090B1A 70%);
+}
+
+.stars{
+    position:absolute;
+    inset:0;
+
+    background-image:
+    radial-gradient(white 1px,transparent 1px);
+
+    background-size:45px 45px;
+
+    opacity:.18;
+}
+
+/* ===========================
+Container
+=========================== */
+
+.container{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+min-height:100vh;
+
+padding:20px;
+
+}
+
+/* ===========================
+Card
+=========================== */
+
+.card{
+
+width:100%;
+max-width:430px;
+
+padding:35px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.1);
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.35);
+
+text-align:center;
+
+}
+
+/* ===========================
+Logo
+=========================== */
+
+.logo{
+
+width:120px;
+
+margin-bottom:20px;
+
+}
+
+/* ===========================
+Title
+=========================== */
+
+h1{
+
+font-size:2rem;
+
+margin-bottom:10px;
+
+}
+
+.card p{
+
+color:#d9dcff;
+
+line-height:1.7;
+
+margin-bottom:20px;
+
+}
+
+/* ===========================
+Input
+=========================== */
+
+.input-group{
+
+margin-bottom:18px;
+
+}
+
+input{
+
+width:100%;
+
+padding:15px;
+
+border-radius:12px;
+
+border:2px solid transparent;
+
+outline:none;
+
+background:#ffffff10;
+
+color:white;
+
+font-size:15px;
+
+transition:.3s;
+
+}
+
+input::placeholder{
+
+color:#cfcfff;
+
+}
+
+input:focus{
+
+border-color:#6C63FF;
+
+box-shadow:
+0 0 15px #6C63FF55;
+
+}
+
+/* ===========================
+Button
+=========================== */
+
+button{
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+font-size:15px;
+
+font-weight:600;
+
+background:#6C63FF;
+
+color:white;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:translateY(-2px);
+
+background:#7E75FF;
+
+}
+
+/* ===========================
+Message
+=========================== */
+
+#message{
+
+margin-top:18px;
+
+font-size:14px;
+
+font-weight:500;
+
+min-height:22px;
+
+}
+
+/* ===========================
+Responsive
+=========================== */
+
+@media(max-width:768px){
+
+.card{
+
+padding:28px;
+
+}
+
+.logo{
+
+width:100px;
+
+}
+
+h1{
+
+font-size:1.7rem;
+
+}
+
+}
