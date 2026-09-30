@@ -18,7 +18,7 @@
   },
 
   "maintenance": {
-    "enabled": false,
+    "enabled": true,
     "title": "NineCSpensaKu sedang diperbarui",
     "message": "Kami sedang menyiapkan sesuatu yang baru untuk galaxy 9C ✨",
     "estimated": "Please come back soon."
