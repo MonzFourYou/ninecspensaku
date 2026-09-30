@@ -1,3 +1,8 @@
+/* =========================================================
+   NINECSPENSAKU — SPACE / GALAXY THEME
+   Complete Responsive Stylesheet
+========================================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -10,15 +15,30 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #050816;
+    background: #040713;
     color: #ffffff;
     overflow-x: hidden;
+    line-height: 1.5;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+button {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 
-/* =========================
-   BACKGROUND
-========================= */
+/* =========================================================
+   SPACE BACKGROUND
+========================================================= */
 
 .background {
     position: fixed;
@@ -26,90 +46,108 @@ body {
     z-index: -10;
     overflow: hidden;
     background:
-        radial-gradient(circle at 50% 10%, #17204d 0%, #080b1d 40%, #03040d 100%);
+        radial-gradient(
+            circle at 50% 8%,
+            #1b275d 0%,
+            #0c1230 32%,
+            #05091b 68%,
+            #02040d 100%
+        );
 }
 
 .stars,
 .stars-two {
     position: absolute;
     inset: 0;
+    pointer-events: none;
     background-image:
-        radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 1px);
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.85) 1px,
+            transparent 1px
+        );
     background-size: 70px 70px;
-    opacity: .35;
+    opacity: .3;
 }
 
 .stars-two {
-    background-size: 130px 130px;
-    opacity: .2;
+    background-size: 125px 125px;
+    opacity: .16;
     transform: rotate(15deg);
 }
 
 .glow {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
+    filter: blur(90px);
+    pointer-events: none;
 }
 
 .glow-one {
-    width: 400px;
-    height: 400px;
-    background: rgba(88, 101, 242, .18);
+    width: 430px;
+    height: 430px;
+    background: rgba(82, 101, 242, .18);
     top: 5%;
-    left: -150px;
+    left: -180px;
 }
 
 .glow-two {
-    width: 450px;
-    height: 450px;
-    background: rgba(0, 180, 255, .12);
-    right: -200px;
+    width: 480px;
+    height: 480px;
+    background: rgba(0, 174, 255, .11);
+    right: -220px;
     top: 40%;
 }
 
 .planet {
     position: absolute;
     border-radius: 50%;
-    border: 1px solid rgba(255,255,255,.08);
+    pointer-events: none;
+    border: 1px solid rgba(255,255,255,.07);
 }
 
 .planet-one {
-    width: 300px;
-    height: 300px;
-    right: -170px;
-    top: 15%;
-    box-shadow: inset -40px -30px 80px rgba(0,0,0,.6);
+    width: 330px;
+    height: 330px;
+    right: -190px;
+    top: 16%;
+    box-shadow:
+        inset -50px -40px 100px rgba(0,0,0,.7),
+        0 0 80px rgba(85,105,255,.04);
 }
 
 .planet-two {
-    width: 180px;
-    height: 180px;
-    left: -100px;
-    top: 65%;
-    box-shadow: inset -30px -20px 60px rgba(0,0,0,.7);
+    width: 190px;
+    height: 190px;
+    left: -105px;
+    top: 67%;
+    box-shadow:
+        inset -35px -25px 70px rgba(0,0,0,.8);
 }
 
 
-/* =========================
+/* =========================================================
    LOADING
-========================= */
+========================================================= */
 
 #loading {
     position: fixed;
     inset: 0;
     z-index: 9999;
-    background: #050816;
+    background: #040713;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: opacity .4s ease;
+    transition:
+        opacity .5s ease,
+        visibility .5s ease;
 }
 
 .loading-orbit {
-    width: 100px;
-    height: 100px;
-    border: 2px solid rgba(130,150,255,.4);
+    width: 105px;
+    height: 105px;
+    border: 2px solid rgba(135,155,255,.4);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -118,8 +156,8 @@ body {
 }
 
 .loading-orbit img {
-    width: 65px;
-    height: 65px;
+    width: 68px;
+    height: 68px;
     object-fit: contain;
     animation: counterSpin 3s linear infinite;
 }
@@ -131,7 +169,7 @@ body {
 
 #loading p {
     margin-top: 8px;
-    color: #8e98c7;
+    color: #8993c2;
     font-size: 13px;
 }
 
@@ -148,13 +186,13 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero {
     min-height: 100vh;
-    padding: 90px 20px 50px;
+    padding: 90px 20px 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -163,20 +201,21 @@ body {
 }
 
 .hero-badge {
-    padding: 8px 16px;
-    border: 1px solid rgba(150,170,255,.3);
+    padding: 8px 17px;
+    border: 1px solid rgba(150,170,255,.28);
     border-radius: 50px;
     color: #aeb9ff;
     font-size: 10px;
     letter-spacing: 2px;
-    background: rgba(255,255,255,.03);
-    margin-bottom: 28px;
+    background: rgba(255,255,255,.035);
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
 }
 
 .logo-wrapper {
     position: relative;
-    width: 150px;
-    height: 150px;
+    width: 155px;
+    height: 155px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -184,16 +223,16 @@ body {
 
 .logo-ring {
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 155px;
+    height: 155px;
     border: 1px solid rgba(135,150,255,.4);
     border-radius: 50%;
     animation: orbit 8s linear infinite;
 }
 
 .logo {
-    width: 105px;
-    height: 105px;
+    width: 108px;
+    height: 108px;
     object-fit: contain;
     position: relative;
     z-index: 2;
@@ -206,33 +245,38 @@ body {
 }
 
 .hero-small {
-    margin-top: 25px;
+    margin-top: 28px;
     color: #8e98c7;
     font-size: 12px;
     letter-spacing: 3px;
 }
 
 .hero h1 {
-    margin-top: 10px;
+    margin-top: 11px;
     font-size: clamp(42px, 10vw, 75px);
     line-height: 1;
     letter-spacing: -3px;
-    background: linear-gradient(120deg, #ffffff, #9daaff);
+    background: linear-gradient(
+        120deg,
+        #ffffff,
+        #9daaff
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .hero-description {
-    margin-top: 20px;
+    margin-top: 22px;
     color: #aeb6d8;
     font-size: 15px;
+    max-width: 560px;
 }
 
 .hero-year {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-top: 18px;
+    margin-top: 19px;
 }
 
 .hero-year span {
@@ -248,7 +292,7 @@ body {
 }
 
 .hero-actions {
-    margin-top: 35px;
+    margin-top: 36px;
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
@@ -257,9 +301,8 @@ body {
 
 .primary-button,
 .secondary-button {
-    border: none;
-    padding: 14px 20px;
-    border-radius: 12px;
+    padding: 14px 21px;
+    border-radius: 13px;
     cursor: pointer;
     font-size: 13px;
     transition: .25s ease;
@@ -274,7 +317,7 @@ body {
 }
 
 .secondary-button {
-    color: white;
+    color: #ffffff;
     background: rgba(255,255,255,.06);
     border: 1px solid rgba(255,255,255,.12);
 }
@@ -285,7 +328,7 @@ body {
 }
 
 .scroll-indicator {
-    margin-top: 60px;
+    margin-top: 62px;
     color: #687198;
     font-size: 10px;
     letter-spacing: 1px;
@@ -300,15 +343,20 @@ body {
 }
 
 
-/* =========================
-   SECTIONS
-========================= */
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
 
 .content-section {
     width: min(1050px, calc(100% - 40px));
     margin: 0 auto;
-    padding: 100px 0 40px;
+    padding: 125px 0 65px;
 }
+
+/*
+   IMPORTANT:
+   Jarak judul section ke card dibuat lebih lega.
+*/
 
 .section-label {
     display: flex;
@@ -317,6 +365,9 @@ body {
     color: #6875a8;
     font-size: 10px;
     letter-spacing: 2px;
+
+    /* FIX UTAMA */
+    margin-bottom: 34px !important;
 }
 
 .section-label span {
@@ -326,11 +377,12 @@ body {
 .section-label div {
     width: 40px;
     height: 1px;
-    background: rgba(150,160,220,.25);
+    background: rgba(150,160,220,.28);
+    flex-shrink: 0;
 }
 
 .section-heading {
-    margin: 28px 0;
+    margin: 30px 0;
 }
 
 .section-heading h2 {
@@ -347,9 +399,9 @@ body {
 }
 
 
-/* =========================
-   CARDS
-========================= */
+/* =========================================================
+   COMMON GLASS CARDS
+========================================================= */
 
 .card,
 .motto-card,
@@ -357,24 +409,49 @@ body {
 .achievement-card,
 .member-card,
 .quick-card {
-    background: rgba(255,255,255,.035);
-    border: 1px solid rgba(255,255,255,.08);
-    backdrop-filter: blur(15px);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.018)
+        );
+
+    border: 1px solid rgba(255,255,255,.09);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.12);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease;
 }
 
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
 .about-card {
-    margin-top: 28px;
-    border-radius: 20px;
-    padding: 28px;
+    margin-top: 0;
+    border-radius: 22px;
+    padding: 30px;
     display: flex;
     gap: 22px;
     align-items: flex-start;
 }
 
+.about-card:hover {
+    border-color: rgba(150,160,255,.2);
+}
+
 .card-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 14px;
+    width: 52px;
+    height: 52px;
+    border-radius: 15px;
     background: rgba(120,135,255,.12);
     display: flex;
     justify-content: center;
@@ -398,14 +475,14 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    MOTTO
-========================= */
+========================================================= */
 
 .motto-card {
-    margin-top: 28px;
-    border-radius: 22px;
-    padding: 45px 30px;
+    margin-top: 0;
+    border-radius: 23px;
+    padding: 48px 30px;
     text-align: center;
     position: relative;
 }
@@ -437,23 +514,22 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    MEMBERS
-========================= */
+========================================================= */
 
 .members-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 16px;
 }
 
 .member-card {
-    padding: 22px;
-    border-radius: 18px;
+    padding: 23px;
+    border-radius: 19px;
     display: flex;
     gap: 18px;
     align-items: center;
-    transition: .3s ease;
 }
 
 .member-card:hover {
@@ -491,9 +567,9 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    COUNTDOWN
-========================= */
+========================================================= */
 
 .countdown-section {
     width: min(1050px, calc(100% - 40px));
@@ -502,7 +578,11 @@ body {
     border-radius: 28px;
     overflow: hidden;
     background:
-        radial-gradient(circle at center, rgba(80,100,220,.14), transparent 65%),
+        radial-gradient(
+            circle at center,
+            rgba(80,100,220,.14),
+            transparent 65%
+        ),
         rgba(255,255,255,.025);
 }
 
@@ -560,19 +640,19 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    GALLERY
-========================= */
+========================================================= */
 
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 13px;
 }
 
 .memory-card {
     min-height: 180px;
-    border-radius: 18px;
+    border-radius: 19px;
     overflow: hidden;
     border: 1px solid rgba(255,255,255,.08);
     background: rgba(255,255,255,.035);
@@ -580,7 +660,7 @@ body {
 
 .memory-card.large {
     grid-row: span 2;
-    min-height: 372px;
+    min-height: 373px;
 }
 
 .memory-placeholder {
@@ -593,7 +673,11 @@ body {
     gap: 10px;
     font-size: 35px;
     background:
-        radial-gradient(circle at center, rgba(100,120,255,.12), transparent 65%);
+        radial-gradient(
+            circle at center,
+            rgba(100,120,255,.12),
+            transparent 65%
+        );
     color: #8894d0;
 }
 
@@ -604,25 +688,35 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    ACHIEVEMENTS
-========================= */
+========================================================= */
 
 .achievement-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    gap: 17px;
+
+    /* ruang ekstra dari section label */
+    margin-top: 0;
 }
 
 .achievement-card {
-    border-radius: 18px;
-    padding: 24px;
+    border-radius: 19px;
+    padding: 26px;
     display: flex;
     gap: 15px;
+    min-height: 145px;
+}
+
+.achievement-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(150,160,255,.24);
 }
 
 .achievement-icon {
-    font-size: 28px;
+    font-size: 29px;
+    flex-shrink: 0;
 }
 
 .achievement-card span {
@@ -643,22 +737,26 @@ body {
 }
 
 
-/* =========================
-   ANNOUNCEMENT
-========================= */
+/* =========================================================
+   ANNOUNCEMENTS
+========================================================= */
 
 .announcement-card {
-    margin-top: 25px;
-    padding: 25px;
-    border-radius: 20px;
+    margin-top: 0;
+    padding: 27px;
+    border-radius: 21px;
     display: flex;
     gap: 18px;
     align-items: flex-start;
 }
 
+.announcement-card:hover {
+    border-color: rgba(150,160,255,.22);
+}
+
 .announcement-icon {
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
     border-radius: 15px;
     background: rgba(130,145,255,.1);
     display: flex;
@@ -685,38 +783,43 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    QUICK ACCESS
-========================= */
+========================================================= */
 
 .quick-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 17px;
 }
 
 .quick-card {
     width: 100%;
-    border-radius: 18px;
-    padding: 22px;
+    border-radius: 19px;
+    padding: 24px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 16px;
     color: white;
     text-align: left;
     cursor: pointer;
-    transition: .3s ease;
 }
 
 .quick-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
     border-color: rgba(150,160,255,.3);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(120,135,255,.08),
+            rgba(255,255,255,.025)
+        );
 }
 
 .quick-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
     background: rgba(120,135,255,.1);
     display: flex;
     align-items: center;
@@ -727,7 +830,7 @@ body {
 
 .quick-card strong {
     display: block;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .quick-card small {
@@ -741,12 +844,41 @@ body {
     margin-left: auto;
     color: #8e9ad7;
     font-size: 20px;
+    transition: transform .25s ease;
+}
+
+.quick-card:hover .arrow {
+    transform: translateX(5px);
 }
 
 
-/* =========================
-   FINAL
-========================= */
+/* =========================================================
+   EXTRA SECTION SPACING
+========================================================= */
+
+/*
+   Ini yang memperbaiki tampilan antar bagian.
+   Setiap section punya ruang yang jelas.
+*/
+
+#achievements {
+    padding-bottom: 105px;
+}
+
+#announcements {
+    padding-top: 105px;
+    padding-bottom: 105px;
+}
+
+#quick-access {
+    padding-top: 105px;
+    padding-bottom: 100px;
+}
+
+
+/* =========================================================
+   FINAL SECTION
+========================================================= */
 
 .final-section {
     width: min(900px, calc(100% - 40px));
@@ -778,9 +910,9 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer {
     text-align: center;
@@ -807,14 +939,16 @@ footer span {
 }
 
 
-/* =========================
-   REVEAL
-========================= */
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
 
 .reveal {
     opacity: 0;
-    transform: translateY(25px);
-    transition: opacity .7s ease, transform .7s ease;
+    transform: translateY(28px);
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
 }
 
 .reveal.visible {
@@ -823,24 +957,78 @@ footer span {
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================================
+   MOBILE — TABLET
+========================================================= */
 
 @media (max-width: 700px) {
 
     .hero {
-        padding-top: 70px;
+        min-height: 92vh;
+        padding:
+            70px 20px
+            55px;
+    }
+
+    .hero h1 {
+        font-size: clamp(39px, 11vw, 58px);
+    }
+
+    .hero-description {
+        font-size: 14px;
+        max-width: 330px;
     }
 
     .content-section {
-        padding-top: 75px;
+        width: calc(100% - 32px);
+
+        /*
+           Jarak antar section lebih terasa
+        */
+        padding-top: 95px;
+        padding-bottom: 65px;
+    }
+
+    .section-label {
+        margin-bottom: 30px !important;
     }
 
     .members-grid,
     .quick-grid,
     .achievement-grid {
         grid-template-columns: 1fr;
+    }
+
+    .achievement-grid {
+        gap: 18px;
+    }
+
+    .achievement-card {
+        min-height: 142px;
+        padding: 24px;
+    }
+
+    .quick-grid {
+        gap: 18px;
+    }
+
+    .quick-card {
+        min-height: 118px;
+        padding: 24px;
+    }
+
+    #achievements {
+        padding-bottom: 110px;
+    }
+
+    #announcements {
+        padding-top: 105px;
+        padding-bottom: 105px;
+    }
+
+    #quick-access {
+        padding-top: 105px;
+        padding-bottom: 100px;
     }
 
     .gallery-grid {
@@ -858,7 +1046,11 @@ footer span {
     }
 
     .about-card {
-        padding: 22px;
+        padding: 23px;
+    }
+
+    .announcement-card {
+        padding: 23px;
     }
 
     .hero-actions {
@@ -870,64 +1062,84 @@ footer span {
         width: 100%;
         justify-content: center;
     }
-
 }
 
+
+/* =========================================================
+   MOBILE — SMALL PHONE
+========================================================= */
+
 @media (max-width: 430px) {
+
+    .hero {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+        font-size: 42px;
+    }
+
+    .logo-wrapper,
+    .logo-ring {
+        width: 135px;
+        height: 135px;
+    }
+
+    .logo {
+        width: 94px;
+        height: 94px;
+    }
+
+    .content-section {
+        width: calc(100% - 28px);
+        padding-top: 90px;
+    }
+
+    .section-label {
+        gap: 9px;
+        font-size: 9px;
+        margin-bottom: 28px !important;
+    }
+
+    .section-label div {
+        width: 30px;
+    }
+
+    .achievement-card {
+        padding: 22px;
+        gap: 13px;
+    }
+
+    .achievement-icon {
+        font-size: 26px;
+    }
+
+    .achievement-card h3 {
+        font-size: 15px;
+    }
+
+    .achievement-card p {
+        font-size: 10px;
+    }
+
+    .quick-card {
+        padding: 21px;
+        min-height: 112px;
+    }
+
+    .quick-icon {
+        width: 47px;
+        height: 47px;
+    }
+
+    .quick-card strong {
+        font-size: 14px;
+    }
 
     .gallery-grid {
         grid-template-columns: 1fr;
     }
 
-    .memory-card.large {
-        grid-column: auto;
-    }
-
-    .hero h1 {
-        letter-spacing: -2px;
-    }
-
-}
-
-/* ================================
-   SECTION SPACING FIX
-================================ */
-
-#achievements {
-  margin-bottom: 100px;
-}
-
-#quick-access {
-  margin-top: 100px;
-}
-
-/* Biar judul section juga punya napas */
-#achievements .section-title,
-#quick-access .section-title {
-  margin-bottom: 35px;
-}
-
-@media (max-width: 768px) {
-  #achievements {
-    margin-bottom: 70px;
-  }
-
-  #quick-access {
-    margin-top: 70px;
-  }
-}
-
-/* =========================================
-   SECTION LABEL SPACING FIX
-========================================= */
-
-.section-label {
-    margin-bottom: 30px !important;
-}
-
-/* Khusus mobile */
-@media (max-width: 650px) {
-    .section-label {
-        margin-bottom: 28px !important;
-    }
-}
+    .memory-card.lar
