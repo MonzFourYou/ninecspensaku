@@ -745,3 +745,218 @@ footer span {
         height: 35px;
     }
 }
+
+/* =========================================
+   NINECSPENSAKU - MOBILE FIX
+   ========================================= */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0 !important;
+}
+
+/* Semua section dibuat benar-benar berada di tengah */
+.content-section {
+    width: calc(100% - 40px) !important;
+    max-width: 900px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Nomor + judul section */
+.section-label {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* About card */
+.about-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 28px !important;
+    box-sizing: border-box !important;
+}
+
+/* Motto */
+.motto-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Quick access */
+.quick-grid {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+}
+
+/* Hilangkan style button bawaan/old CSS */
+.quick-card,
+.quick-card:hover,
+.quick-card:focus,
+.quick-card:active {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 100px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    padding: 18px !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.10) !important;
+    border-radius: 20px !important;
+
+    background: rgba(255, 255, 255, 0.055) !important;
+    color: #ffffff !important;
+
+    box-shadow: none !important;
+    outline: none !important;
+
+    text-align: left !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+
+    transform: none;
+}
+
+.quick-card:hover {
+    background: rgba(255, 255, 255, 0.09) !important;
+    border-color: rgba(150, 165, 255, 0.3) !important;
+    transform: translateY(-3px) !important;
+}
+
+.quick-card strong {
+    color: #ffffff !important;
+    font-size: 14px !important;
+}
+
+.quick-card small {
+    color: #8f99bd !important;
+    font-size: 10px !important;
+}
+
+.quick-icon {
+    flex-shrink: 0 !important;
+}
+
+/* Tombol Hero */
+.hero-actions button {
+    font-family: inherit !important;
+}
+
+/* Jangan biarkan tombol lama membuat warna aneh */
+.primary-button {
+    background: #ffffff !important;
+    color: #080b1d !important;
+}
+
+.secondary-button {
+    background: rgba(255, 255, 255, 0.06) !important;
+    color: #ffffff !important;
+}
+
+/* Final section */
+.final-section {
+    width: calc(100% - 40px) !important;
+    max-width: 700px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Footer */
+footer {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 650px) {
+
+    .content-section {
+        width: calc(100% - 32px) !important;
+    }
+
+    .section-label {
+        font-size: 10px !important;
+    }
+
+    .about-card {
+        padding: 22px !important;
+        border-radius: 22px !important;
+    }
+
+    .about-card h2 {
+        font-size: 21px !important;
+        line-height: 1.3 !important;
+    }
+
+    .about-card p {
+        font-size: 13px !important;
+        line-height: 1.7 !important;
+    }
+
+    .motto-card {
+        padding: 35px 22px !important;
+    }
+
+    .motto-card p {
+        font-size: 19px !important;
+        line-height: 1.5 !important;
+    }
+
+    .quick-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    .quick-card,
+    .quick-card:hover,
+    .quick-card:focus,
+    .quick-card:active {
+        min-height: 88px !important;
+        padding: 18px !important;
+        border-radius: 18px !important;
+    }
+
+    .quick-card strong {
+        font-size: 14px !important;
+    }
+
+    .quick-card small {
+        font-size: 10px !important;
+    }
+
+    .final-section {
+        width: calc(100% - 32px) !important;
+    }
+
+    .final-section h2 {
+        font-size: 38px !important;
+        line-height: 1.05 !important;
+    }
+
+    .final-section p {
+        font-size: 13px !important;
+    }
+}
