@@ -5,272 +5,408 @@
 
 document.addEventListener("DOMContentLoaded", async () => {
 
-    try {
+  const loading = document.getElementById("loading");
+  const app = document.getElementById("app");
+  const footer = document.querySelector("footer");
 
-        /*
-         * Tambahkan timestamp agar browser tidak memakai
-         * settings.json versi lama dari cache.
-         */
-        const response = await fetch(
-            `config/settings.json?v=${Date.now()}`,
-            {
-                cache: "no-store"
-            }
+  const maintenance = document.getElementById("maintenance-screen");
+
+  const maintenanceTitle =
+    document.getElementById("maintenance-title");
+
+  const maintenanceMessage =
+    document.getElementById("maintenance-message");
+
+  const maintenanceEstimated =
+    document.getElementById("maintenance-estimated");
+
+
+  /* =====================================================
+     HELPER
+  ====================================================== */
+
+  function hideLoading() {
+
+    if (!loading) return;
+
+    loading.style.opacity = "0";
+    loading.style.pointerEvents = "none";
+
+    setTimeout(() => {
+      loading.remove();
+    }, 450);
+
+  }
+
+
+  function enableMaintenance(data) {
+
+    if (!maintenance) return;
+
+    const settings = data.maintenance || {};
+
+    if (maintenanceTitle) {
+      maintenanceTitle.textContent =
+        settings.title ||
+        "NineCSpensaKu sedang diperbarui";
+    }
+
+    if (maintenanceMessage) {
+      maintenanceMessage.textContent =
+        settings.message ||
+        "Kami sedang menyiapkan sesuatu yang baru untuk galaxy 9C ✨";
+    }
+
+    if (maintenanceEstimated) {
+      maintenanceEstimated.textContent =
+        settings.estimated ||
+        "Please come back soon.";
+    }
+
+
+    /* Hide website */
+
+    if (app) {
+      app.style.display = "none";
+    }
+
+    if (footer) {
+      footer.style.display = "none";
+    }
+
+
+    /* Show maintenance */
+
+    maintenance.classList.add("active");
+
+    document.body.classList.add("maintenance-active");
+
+  }
+
+
+  /* =====================================================
+     LOAD SETTINGS
+  ====================================================== */
+
+  try {
+
+    const response = await fetch(
+      `config/settings.json?v=${Date.now()}`,
+      {
+        cache: "no-store"
+      }
+    );
+
+
+    if (!response.ok) {
+      throw new Error(
+        "settings.json tidak ditemukan."
+      );
+    }
+
+
+    const data = await response.json();
+
+
+    /* ===================================================
+       WEBSITE TITLE
+    ==================================================== */
+
+    if (data.website?.title) {
+      document.title = data.website.title;
+    }
+
+
+    /* ===================================================
+       MAINTENANCE MODE
+    ==================================================== */
+
+    if (data.maintenance?.enabled === true) {
+
+      console.log(
+        "🛠️ NineCSpensaKu Maintenance Mode: ON"
+      );
+
+      enableMaintenance(data);
+
+      hideLoading();
+
+      return;
+    }
+
+
+    /* ===================================================
+       NORMAL WEBSITE
+    ==================================================== */
+
+    if (data.website?.description) {
+
+      const description =
+        document.querySelector(
+          'meta[name="description"]'
         );
 
-        if (!response.ok) {
-            throw new Error("Gagal mengambil settings.json");
-        }
-
-        const data = await response.json();
-
-
-        /* =================================================
-           WEBSITE
-        ================================================= */
-
-        if (data.website?.title) {
-            document.title = data.website.title;
-        }
-
-
-        /* =================================================
-           MAINTENANCE MODE
-        ================================================= */
-
-        if (data.maintenance?.enabled === true) {
-
-            console.log("🛠️ Maintenance Mode: ON");
-
-            const maintenance =
-                document.getElementById("maintenance-screen");
-
-            const app =
-                document.getElementById("app");
-
-            const footer =
-                document.querySelector("footer");
-
-            const loading =
-                document.getElementById("loading");
-
-
-            /* Isi teks maintenance */
-
-            const title =
-                document.getElementById("maintenance-title");
-
-            const message =
-                document.getElementById("maintenance-message");
-
-            const estimated =
-                document.getElementById("maintenance-estimated");
-
-
-            if (title) {
-                title.textContent =
-                    data.maintenance.title ||
-                    "NineCSpensaKu sedang diperbarui";
-            }
-
-            if (message) {
-                message.textContent =
-                    data.maintenance.message ||
-                    "Kami sedang menyiapkan sesuatu yang baru untuk galaxy 9C ✨";
-            }
-
-            if (estimated) {
-                estimated.textContent =
-                    data.maintenance.estimated ||
-                    "Please come back soon.";
-            }
-
-
-            /* Tampilkan maintenance */
-
-            if (maintenance) {
-                maintenance.classList.add("active");
-            }
-
-
-            /* Sembunyikan website */
-
-            if (app) {
-                app.style.display = "none";
-            }
-
-            if (footer) {
-                footer.style.display = "none";
-            }
-
-            if (loading) {
-                loading.remove();
-            }
-
-
-            /*
-             * STOP DI SINI.
-             * Website normal tidak perlu dijalankan.
-             */
-
-            return;
-        }
-
-
-        /* =================================================
-           NORMAL WEBSITE
-        ================================================= */
-
-        console.log("🌌 Maintenance Mode: OFF");
-
-
-        /* Hero */
-
-        const className =
-            document.getElementById("class-name");
-
-        if (className) {
-            className.textContent =
-                data.class?.name || "NineCSpensaku";
-        }
-
-
-        const schoolName =
-            document.getElementById("school-name");
-
-        if (schoolName) {
-            schoolName.textContent =
-                data.class?.school ||
-                "SMP Negeri 1 Pangkalan Kuras";
-        }
-
-
-        const academicYear =
-            document.getElementById("academic-year");
-
-        if (academicYear) {
-            academicYear.textContent =
-                "Academic Year " +
-                (data.website?.year || "2026/2027");
-        }
-
-
-        const motto =
-            document.getElementById("motto");
-
-        if (motto) {
-            motto.textContent =
-                data.class?.motto ||
-                "Beyond The Stars, Together We Grow.";
-        }
-
-
-        /* Footer */
-
-        const footerText =
-            document.getElementById("footer-text");
-
-        if (footerText) {
-            footerText.textContent =
-                data.footer?.copyright ||
-                "© 2026–2027 NineCSpensaKu • All Rights Reserved";
-        }
-
-
-        /* =================================================
-           MEDIA SOSIAL
-        ================================================= */
-
-        const socialButtons = [
-            document.getElementById("social-button"),
-            document.getElementById("social-button-2")
-        ];
-
-
-        socialButtons.forEach(button => {
-
-            if (!button) return;
-
-            button.addEventListener("click", () => {
-
-                const link =
-                    data.links?.linktree;
-
-                if (link) {
-
-                    window.open(
-                        link,
-                        "_blank",
-                        "noopener,noreferrer"
-                    );
-
-                } else {
-
-                    alert("Linktree belum diatur.");
-
-                }
-
-            });
-
-        });
-
-
-        /* =================================================
-           INVITATION
-        ================================================= */
-
-        const inviteButton =
-            document.getElementById("invite-button");
-
-        if (inviteButton) {
-
-            inviteButton.addEventListener(
-                "click",
-                () => {
-                    window.location.href =
-                        "invite.html";
-                }
-            );
-
-        }
-
-
-    } catch (error) {
-
-        console.error(
-            "NineCSpensaKu Error:",
-            error
+      if (description) {
+        description.setAttribute(
+          "content",
+          data.website.description
         );
+      }
+    }
+
+
+    /* ===================================================
+       CLASS NAME
+    ==================================================== */
+
+    const schoolName =
+      document.getElementById("school-name");
+
+    if (
+      schoolName &&
+      data.class?.name
+    ) {
+
+      schoolName.textContent =
+        data.class.name;
 
     }
+
+
+    /* ===================================================
+       SOCIAL LINKS
+    ==================================================== */
+
+    const socialLinks =
+      document.querySelectorAll(
+        'a[href*="linktr.ee"]'
+      );
+
+
+    if (data.links?.linktree) {
+
+      socialLinks.forEach(link => {
+
+        link.href =
+          data.links.linktree;
+
+      });
+
+    }
+
+
+    /* ===================================================
+       COUNTDOWN
+    ==================================================== */
+
+    startCountdown("2027-05-01T00:00:00");
+
+
+    /* ===================================================
+       SCROLL REVEAL
+    ==================================================== */
+
+    setupReveal();
+
+
+  } catch (error) {
+
+    console.error(
+      "NineCSpensaKu Error:",
+      error
+    );
+
+
+    /*
+      Kalau settings gagal dibaca,
+      website tetap bisa terbuka.
+    */
+
+  } finally {
+
+    /*
+      INI PENTING.
+
+      Apapun yang terjadi,
+      loading TETAP DIHAPUS.
+      Jadi tidak akan stuck di "..."
+    */
+
+    hideLoading();
+
+  }
 
 });
 
 
 /* =========================================================
-   LOADING SCREEN
+   COUNTDOWN
 ========================================================= */
 
-window.addEventListener("load", () => {
+function startCountdown(targetDate) {
 
-    const loading =
-        document.getElementById("loading");
+  const daysElement =
+    document.getElementById("days");
 
-    if (!loading) return;
+  const hoursElement =
+    document.getElementById("hours");
 
-    setTimeout(() => {
+  const minutesElement =
+    document.getElementById("minutes");
 
-        loading.style.opacity = "0";
-        loading.style.pointerEvents = "none";
+  const secondsElement =
+    document.getElementById("seconds");
 
-        setTimeout(() => {
 
-            if (loading) {
-                loading.remove();
-            }
+  if (
+    !daysElement ||
+    !hoursElement ||
+    !minutesElement ||
+    !secondsElement
+  ) {
+    return;
+  }
 
-        }, 500);
 
-    }, 700);
+  function updateCountdown() {
 
-});
+    const target =
+      new Date(targetDate).getTime();
+
+    const now =
+      new Date().getTime();
+
+    const distance =
+      target - now;
+
+
+    if (distance <= 0) {
+
+      daysElement.textContent = "0";
+      hoursElement.textContent = "0";
+      minutesElement.textContent = "0";
+      secondsElement.textContent = "0";
+
+      return;
+    }
+
+
+    const days =
+      Math.floor(
+        distance /
+        (1000 * 60 * 60 * 24)
+      );
+
+
+    const hours =
+      Math.floor(
+        (distance /
+          (1000 * 60 * 60)) % 24
+      );
+
+
+    const minutes =
+      Math.floor(
+        (distance /
+          (1000 * 60)) % 60
+      );
+
+
+    const seconds =
+      Math.floor(
+        (distance / 1000) % 60
+      );
+
+
+    daysElement.textContent =
+      days;
+
+    hoursElement.textContent =
+      String(hours).padStart(2, "0");
+
+    minutesElement.textContent =
+      String(minutes).padStart(2, "0");
+
+    secondsElement.textContent =
+      String(seconds).padStart(2, "0");
+
+  }
+
+
+  updateCountdown();
+
+  setInterval(
+    updateCountdown,
+    1000
+  );
+
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+function setupReveal() {
+
+  const elements =
+    document.querySelectorAll(
+      ".info-card, .member-card, .memory-card, .achievement, .section-heading"
+    );
+
+
+  if (!elements.length) {
+    return;
+  }
+
+
+  elements.forEach(element => {
+
+    element.style.opacity = "0";
+
+    element.style.transform =
+      "translateY(20px)";
+
+    element.style.transition =
+      "opacity 0.7s ease, transform 0.7s ease";
+
+  });
+
+
+  const observer =
+    new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+
+          entry.target.style.opacity = "1";
+
+          entry.target.style.transform =
+            "translateY(0)";
+
+
+          observer.unobserve(
+            entry.target
+          );
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+
+  elements.forEach(element => {
+
+    observer.observe(element);
+
+  });
+
+}
