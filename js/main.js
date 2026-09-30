@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (
                 data.links &&
                 data.links.linktree &&
-                data.links.linktree.trim() !== ""
+                data.links.linktree.trim() !== "https://linktr.ee/ninecspensaa"
             ) {
 
                 window.open(
