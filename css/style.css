@@ -888,3 +888,31 @@ footer span {
     }
 
 }
+
+/* ================================
+   SECTION SPACING FIX
+================================ */
+
+#achievements {
+  margin-bottom: 100px;
+}
+
+#quick-access {
+  margin-top: 100px;
+}
+
+/* Biar judul section juga punya napas */
+#achievements .section-title,
+#quick-access .section-title {
+  margin-bottom: 35px;
+}
+
+@media (max-width: 768px) {
+  #achievements {
+    margin-bottom: 70px;
+  }
+
+  #quick-access {
+    margin-top: 70px;
+  }
+}
