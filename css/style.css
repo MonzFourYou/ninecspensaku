@@ -916,3 +916,18 @@ footer span {
     margin-top: 70px;
   }
 }
+
+/* =========================================
+   SECTION LABEL SPACING FIX
+========================================= */
+
+.section-label {
+    margin-bottom: 30px !important;
+}
+
+/* Khusus mobile */
+@media (max-width: 650px) {
+    .section-label {
+        margin-bottom: 28px !important;
+    }
+}
