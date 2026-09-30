@@ -1,51 +1,76 @@
-/* ===========================
+/* =====================================
    NineCSpensaKu
-   Main Script
-=========================== */
+   Main JavaScript
+===================================== */
 
+
+/* =====================================
+   SCROLL FUNCTION
+===================================== */
+
+function scrollToSection(id) {
+
+    const section = document.getElementById(id);
+
+    if (!section) return;
+
+    section.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+}
+
+
+/* =====================================
+   LOAD CONFIG
+===================================== */
 
 document.addEventListener("DOMContentLoaded", async () => {
 
     try {
 
-        /* ======================
-           LOAD CONFIG
-        ====================== */
-
-        const response = await fetch("config/settings.json");
+        const response =
+            await fetch("config/settings.json");
 
         if (!response.ok) {
             throw new Error(
-                "Gagal mengambil settings.json"
+                "settings.json tidak dapat dimuat."
             );
         }
 
-        const data = await response.json();
+        const data =
+            await response.json();
 
 
-
-        /* ======================
+        /* =================================
            WEBSITE
-        ====================== */
+        ================================= */
 
-        if (data.website) {
+        if (
+            data.website &&
+            data.website.title
+        ) {
 
-            if (data.website.title) {
-                document.title = data.website.title;
-            }
+            document.title =
+                data.website.title;
 
         }
 
 
-
-        /* ======================
-           HERO
-        ====================== */
+        /* =================================
+           CLASS NAME
+        ================================= */
 
         const className =
-            document.getElementById("class-name");
+            document.getElementById(
+                "class-name"
+            );
 
-        if (className && data.class) {
+        if (
+            className &&
+            data.class
+        ) {
 
             className.textContent =
                 data.class.name || "";
@@ -53,10 +78,19 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
 
-        const schoolName =
-            document.getElementById("school-name");
+        /* =================================
+           SCHOOL
+        ================================= */
 
-        if (schoolName && data.class) {
+        const schoolName =
+            document.getElementById(
+                "school-name"
+            );
+
+        if (
+            schoolName &&
+            data.class
+        ) {
 
             schoolName.textContent =
                 data.class.school || "";
@@ -64,8 +98,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
 
+        /* =================================
+           ACADEMIC YEAR
+        ================================= */
+
         const academicYear =
-            document.getElementById("academic-year");
+            document.getElementById(
+                "academic-year"
+            );
 
         if (
             academicYear &&
@@ -80,24 +120,56 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
 
-        const motto =
-            document.getElementById("motto");
+        /* =================================
+           MOTTO
+        ================================= */
 
-        if (motto && data.class) {
+        const motto =
+            document.getElementById(
+                "motto"
+            );
+
+        if (
+            motto &&
+            data.class &&
+            data.class.motto
+        ) {
 
             motto.textContent =
-                data.class.motto || "";
+                data.class.motto;
 
         }
 
 
+        /* =================================
+           ABOUT
+        ================================= */
 
-        /* ======================
+        const about =
+            document.getElementById(
+                "about"
+            );
+
+        if (
+            about &&
+            data.website &&
+            data.website.description
+        ) {
+
+            about.textContent =
+                data.website.description;
+
+        }
+
+
+        /* =================================
            FOOTER
-        ====================== */
+        ================================= */
 
         const footerText =
-            document.getElementById("footer-text");
+            document.getElementById(
+                "footer-text"
+            );
 
         if (
             footerText &&
@@ -111,21 +183,23 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
 
-
-        /* ======================
+        /* =================================
            SOCIAL MEDIA
-        ====================== */
+        ================================= */
 
-        const openSocialMedia = () => {
+        function openSocialMedia() {
+
+            const link =
+                data.links &&
+                data.links.linktree;
 
             if (
-                data.links &&
-                data.links.linktree &&
-                data.links.linktree.trim() !== "https://linktr.ee/ninecspensaa"
+                link &&
+                link.trim() !== ""
             ) {
 
                 window.open(
-                    data.links.linktree,
+                    link,
                     "_blank",
                     "noopener,noreferrer"
                 );
@@ -138,10 +212,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             }
 
-        };
+        }
 
-
-        /* Hero Social Button */
 
         const socialButton =
             document.getElementById(
@@ -158,8 +230,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
 
-        /* Quick Access Social Button */
-
         const socialButtonQuick =
             document.getElementById(
                 "social-button-quick"
@@ -175,10 +245,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
 
-
-        /* ======================
+        /* =================================
            INVITATION
-        ====================== */
+        ================================= */
 
         const inviteButton =
             document.getElementById(
@@ -200,64 +269,277 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
 
-
-        /* ======================
-           SUCCESS
-        ====================== */
-
         console.log(
-            "NineCSpensaKu configuration loaded successfully."
+            "NineCSpensaKu loaded successfully."
         );
 
 
     } catch (error) {
 
         console.error(
-            "NineCSpensaKu Error:",
+            "NineCSpensaKu:",
             error
         );
 
-        alert(
-            "Gagal memuat konfigurasi website."
+        /*
+         * Jangan tampilkan alert error
+         * agar website tetap nyaman digunakan.
+         */
+
+    }
+
+});
+
+
+/* =====================================
+   GRADUATION COUNTDOWN
+===================================== */
+
+/*
+   UBAH TANGGAL INI kalau tanggal
+   kelulusan sudah ditentukan.
+*/
+
+const graduationDate =
+    new Date("2027-05-01T00:00:00");
+
+
+function updateCountdown() {
+
+    const now =
+        new Date().getTime();
+
+    const target =
+        graduationDate.getTime();
+
+    const difference =
+        target - now;
+
+
+    if (difference <= 0) {
+
+        setCountdown(
+            0,
+            0,
+            0,
+            0
+        );
+
+        return;
+
+    }
+
+
+    const days =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (difference /
+                (1000 * 60 * 60)) %
+            24
+        );
+
+
+    const minutes =
+        Math.floor(
+            (difference /
+                (1000 * 60)) %
+            60
+        );
+
+
+    const seconds =
+        Math.floor(
+            (difference /
+                1000) %
+            60
+        );
+
+
+    setCountdown(
+        days,
+        hours,
+        minutes,
+        seconds
+    );
+
+}
+
+
+function setCountdown(
+    days,
+    hours,
+    minutes,
+    seconds
+) {
+
+    const daysElement =
+        document.getElementById(
+            "days"
+        );
+
+    const hoursElement =
+        document.getElementById(
+            "hours"
+        );
+
+    const minutesElement =
+        document.getElementById(
+            "minutes"
+        );
+
+    const secondsElement =
+        document.getElementById(
+            "seconds"
+        );
+
+
+    if (daysElement) {
+
+        daysElement.textContent =
+            String(days).padStart(
+                3,
+                "0"
+            );
+
+    }
+
+
+    if (hoursElement) {
+
+        hoursElement.textContent =
+            String(hours).padStart(
+                2,
+                "0"
+            );
+
+    }
+
+
+    if (minutesElement) {
+
+        minutesElement.textContent =
+            String(minutes).padStart(
+                2,
+                "0"
+            );
+
+    }
+
+
+    if (secondsElement) {
+
+        secondsElement.textContent =
+            String(seconds).padStart(
+                2,
+                "0"
+            );
+
+    }
+
+}
+
+
+updateCountdown();
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+
+/* =====================================
+   SCROLL REVEAL
+===================================== */
+
+const observer =
+    new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach(
+                (entry) => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(
+        (element) => {
+
+            observer.observe(
+                element
+            );
+
+        }
+    );
+
+
+/* =====================================
+   LOADING SCREEN
+===================================== */
+
+window.addEventListener(
+    "load",
+    () => {
+
+        const loading =
+            document.getElementById(
+                "loading"
+            );
+
+
+        if (!loading) return;
+
+
+        setTimeout(
+            () => {
+
+                loading.style.opacity =
+                    "0";
+
+                loading.style.pointerEvents =
+                    "none";
+
+
+                setTimeout(
+                    () => {
+
+                        loading.remove();
+
+                    },
+                    400
+                );
+
+            },
+            900
         );
 
     }
-
-});
-
-
-
-/* ===========================
-   LOADING SCREEN
-=========================== */
-
-window.addEventListener("load", () => {
-
-    const loading =
-        document.getElementById("loading");
-
-
-    if (!loading) {
-        return;
-    }
-
-
-    setTimeout(() => {
-
-        loading.style.opacity = "0";
-
-        loading.style.pointerEvents =
-            "none";
-
-
-        setTimeout(() => {
-
-            if (loading) {
-                loading.remove();
-            }
-
-        }, 400);
-
-    }, 900);
-
-});
+);
