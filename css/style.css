@@ -1141,5 +1141,87 @@ footer span {
     .gallery-grid {
         grid-template-columns: 1fr;
     }
+    .memory-card.large {
+        grid-column: auto;
+    }
 
-    .memory-card.lar
+    .countdown-content {
+        padding: 50px 18px;
+    }
+
+    .about-card,
+    .announcement-card {
+        gap: 15px;
+    }
+
+    .card-icon,
+    .announcement-icon {
+        width: 46px;
+        height: 46px;
+    }
+
+    #achievements {
+        padding-bottom: 100px;
+    }
+
+    #announcements {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    #quick-access {
+        padding-top: 100px;
+        padding-bottom: 90px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL SCREEN
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-small {
+        font-size: 10px;
+    }
+
+    .content-section {
+        width: calc(100% - 24px);
+    }
+
+    .achievement-card,
+    .quick-card,
+    .announcement-card,
+    .about-card {
+        padding: 19px;
+    }
+
+    .section-label {
+        margin-bottom: 25px !important;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
