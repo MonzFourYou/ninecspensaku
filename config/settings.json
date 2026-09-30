@@ -6,13 +6,6 @@
     "theme": "space"
   },
 
-  "maintenance": {
-    "enabled": true,
-    "title": "NineCSpensaKu sedang diperbarui",
-    "message": "Kami sedang menyiapkan sesuatu yang baru untuk galaxy 9C ✨",
-    "estimated": "Please come back soon."
-  },
-
   "class": {
     "name": "NineCSpensaku",
     "class": "9C",
@@ -22,6 +15,13 @@
 
   "links": {
     "linktree": "https://linktr.ee/ninecspensaa"
+  },
+
+  "maintenance": {
+    "enabled": true,
+    "title": "NineCSpensaKu sedang diperbarui",
+    "message": "Kami sedang menyiapkan sesuatu yang baru untuk galaxy 9C ✨",
+    "estimated": "Please come back soon."
   },
 
   "footer": {
