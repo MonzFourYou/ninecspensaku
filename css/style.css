@@ -1370,3 +1370,43 @@ footer {
     object-fit: cover;
     display: block;
 }
+
+/* =========================
+   MEMORIES IMAGES
+========================= */
+
+.memories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.memory-card {
+    overflow: hidden;
+}
+
+.memory-placeholder {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+    border-radius: inherit;
+}
+
+.memory-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* HP */
+@media (max-width: 768px) {
+    .memories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-placeholder {
+        height: 220px;
+    }
+}
