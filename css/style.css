@@ -61,8 +61,11 @@ a {
 .loader span {
   width: 7px;
   height: 7px;
+
   border-radius: 50%;
+
   background: #fff;
+
   animation: loader 1s infinite ease-in-out;
 }
 
@@ -95,7 +98,6 @@ a {
 .maintenance-screen {
   position: fixed;
   inset: 0;
-
   z-index: 9000;
 
   display: none;
@@ -103,7 +105,6 @@ a {
   justify-content: center;
 
   padding: 24px;
-
   overflow: hidden;
 
   background:
@@ -211,6 +212,7 @@ a {
   font-size: 35px;
 
   background: rgba(255, 255, 255, 0.07);
+
   border: 1px solid rgba(255, 255, 255, 0.1);
 
   box-shadow:
@@ -223,7 +225,6 @@ a {
   gap: 9px;
 
   padding: 8px 13px;
-
   margin-bottom: 22px;
 
   border-radius: 999px;
@@ -235,6 +236,7 @@ a {
   color: #aaa9ff;
 
   background: rgba(120, 110, 255, 0.08);
+
   border: 1px solid rgba(120, 110, 255, 0.15);
 }
 
@@ -257,6 +259,7 @@ a {
   font-family: "Space Grotesk", sans-serif;
 
   font-size: clamp(30px, 6vw, 52px);
+
   line-height: 1.05;
 
   letter-spacing: -1.5px;
@@ -270,6 +273,7 @@ a {
   color: #a5a5b4;
 
   font-size: 15px;
+
   line-height: 1.7;
 }
 
@@ -289,8 +293,8 @@ a {
 
 .maintenance-estimated {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 12px;
 
   color: #777789;
@@ -317,6 +321,7 @@ a {
   inset: 5px;
 
   border: 1px solid rgba(255, 255, 255, 0.1);
+
   border-radius: 50%;
 
   animation: orbitRotate 5s linear infinite;
@@ -372,6 +377,7 @@ a {
   padding: 11px 13px;
 
   border: 1px solid rgba(255, 255, 255, 0.08);
+
   border-radius: 18px;
 
   background: rgba(7, 7, 17, 0.65);
@@ -448,7 +454,6 @@ a {
   transform: translateY(-2px);
 }
 
-
 /* =========================================================
    HERO
 ========================================================= */
@@ -517,6 +522,7 @@ a {
   padding: 8px 13px;
 
   border: 1px solid rgba(255, 255, 255, 0.1);
+
   border-radius: 999px;
 
   background: rgba(255, 255, 255, 0.04);
@@ -525,6 +531,7 @@ a {
 
   font-size: 10px;
   font-weight: 800;
+
   letter-spacing: 1.5px;
 }
 
@@ -535,6 +542,7 @@ a {
   border-radius: 50%;
 
   background: #8d84ff;
+
   box-shadow: 0 0 12px #8d84ff;
 }
 
@@ -575,13 +583,14 @@ a {
 }
 
 .hero p {
-  margin: 28px auto 35px;
-
   max-width: 620px;
+
+  margin: 28px auto 35px;
 
   color: #9494a4;
 
   font-size: 15px;
+
   line-height: 1.8;
 }
 
@@ -592,7 +601,9 @@ a {
 .hero-buttons {
   display: flex;
   justify-content: center;
+
   gap: 12px;
+
   flex-wrap: wrap;
 }
 
@@ -600,6 +611,7 @@ a {
 .secondary-button {
   display: inline-flex;
   align-items: center;
+
   gap: 12px;
 
   padding: 14px 20px;
@@ -614,12 +626,15 @@ a {
 
 .primary-button {
   color: #05050d;
+
   background: #fff;
 }
 
 .primary-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 15px 35px rgba(255, 255, 255, 0.12);
 }
 
 .secondary-button {
@@ -644,12 +659,15 @@ a {
 
   display: flex;
   align-items: center;
+
   gap: 10px;
 
   color: #666675;
 
   font-size: 9px;
+
   letter-spacing: 1px;
+
   text-transform: uppercase;
 }
 
@@ -667,6 +685,7 @@ a {
 @keyframes pulse {
   50% {
     opacity: 0.3;
+
     transform: scale(1.5);
   }
 }
@@ -693,6 +712,7 @@ a {
 .section-label {
   display: flex;
   align-items: center;
+
   gap: 9px;
 
   margin-bottom: 20px;
@@ -701,6 +721,7 @@ a {
 
   font-size: 10px;
   font-weight: 800;
+
   letter-spacing: 1.8px;
 }
 
@@ -732,6 +753,7 @@ a {
   color: #858594;
 
   font-size: 14px;
+
   line-height: 1.8;
 }
 
@@ -754,6 +776,7 @@ a {
   padding: 28px;
 
   border: 1px solid rgba(255, 255, 255, 0.07);
+
   border-radius: 20px;
 
   background:
@@ -783,20 +806,22 @@ a {
 }
 
 .card-icon {
-  font-size: 30px;
-
   margin-bottom: 35px;
+
+  font-size: 30px;
 }
 
 .info-card h3 {
-  font-size: 17px;
   margin-bottom: 10px;
+
+  font-size: 17px;
 }
 
 .info-card p {
   color: #777787;
 
   font-size: 12px;
+
   line-height: 1.7;
 }
 
@@ -826,6 +851,7 @@ a {
   text-align: center;
 
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 
   background:
@@ -867,6 +893,7 @@ a {
   color: #828291;
 
   font-size: 14px;
+
   line-height: 1.8;
 }
 
@@ -907,6 +934,7 @@ a {
   text-align: center;
 
   border: 1px solid rgba(255, 255, 255, 0.07);
+
   border-radius: 20px;
 
   background: rgba(255, 255, 255, 0.035);
@@ -949,7 +977,6 @@ a {
   font-size: 11px;
 }
 
-
 /* =========================================================
    COUNTDOWN
 ========================================================= */
@@ -970,6 +997,7 @@ a {
 
 .countdown-container {
   width: min(900px, 100%);
+
   margin: auto;
 }
 
@@ -997,9 +1025,20 @@ a {
   padding: 25px 15px;
 
   border: 1px solid rgba(255, 255, 255, 0.07);
+
   border-radius: 18px;
 
   background: rgba(255, 255, 255, 0.035);
+
+  transition: 0.3s;
+}
+
+.countdown-box:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(140, 130, 255, 0.2);
+
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .countdown-box strong {
@@ -1008,13 +1047,21 @@ a {
   font-family: "Space Grotesk", sans-serif;
 
   font-size: clamp(30px, 5vw, 48px);
+
+  line-height: 1;
 }
 
 .countdown-box span {
+  display: block;
+
+  margin-top: 8px;
+
   color: #696979;
 
   font-size: 9px;
+
   letter-spacing: 1px;
+
   text-transform: uppercase;
 }
 
@@ -1023,64 +1070,48 @@ a {
    MEMORIES
 ========================================================= */
 
-.memories-grid { <div class="memories-grid">
+.memories-grid {
+  display: grid;
 
-    <div class="memory-card">
-        <div class="memory-placeholder">
-            <img src="assets/images/foto1.jpg" alt="Our First Chapter">
-        </div>
-        <div class="memory-info">
-            <span>MEMORY 01</span>
-            <h3>Our First Chapter</h3>
-        </div>
-    </div>
+  grid-template-columns: repeat(3, 1fr);
 
-    <div class="memory-card">
-        <div class="memory-placeholder">
-            <img src="assets/images/foto2.jpg" alt="Class Moments">
-        </div>
-        <div class="memory-info">
-            <span>MEMORY 02</span>
-            <h3>Class Moments</h3>
-        </div>
-    </div>
-
-    <div class="memory-card">
-        <div class="memory-placeholder">
-            <img src="assets/images/foto3.jpg" alt="Our Journey">
-        </div>
-        <div class="memory-info">
-            <span>MEMORY 03</span>
-            <h3>Our Journey</h3>
-        </div>
-    </div>
-
-</div>
+  gap: 14px;
 }
 
 .memory-card {
   overflow: hidden;
 
   border: 1px solid rgba(255, 255, 255, 0.07);
+
   border-radius: 20px;
 
   background: rgba(255, 255, 255, 0.035);
 
-  transition: 0.3s;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
 }
 
 .memory-card:hover {
   transform: translateY(-5px);
+
+  border-color: rgba(140, 130, 255, 0.25);
+
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .memory-placeholder {
+  position: relative;
+
+  width: 100%;
   height: 220px;
+
+  overflow: hidden;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  font-size: 50px;
 
   background:
     radial-gradient(
@@ -1091,22 +1122,47 @@ a {
     #090912;
 }
 
+.memory-placeholder img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transition: transform 0.4s ease;
+}
+
+.memory-card:hover .memory-placeholder img {
+  transform: scale(1.05);
+}
+
 .memory-info {
   padding: 20px;
 }
 
 .memory-info span {
+  display: block;
+
   color: #8179ff;
 
   font-size: 8px;
+
   font-weight: 800;
+
   letter-spacing: 1.5px;
 }
 
 .memory-info h3 {
   margin-top: 7px;
 
+  color: #fff;
+
   font-size: 14px;
+
+  line-height: 1.4;
 }
 
 
@@ -1123,11 +1179,13 @@ a {
 .achievement {
   display: flex;
   align-items: center;
+
   gap: 20px;
 
   padding: 22px;
 
   border: 1px solid rgba(255, 255, 255, 0.07);
+
   border-radius: 18px;
 
   background: rgba(255, 255, 255, 0.03);
@@ -1137,6 +1195,10 @@ a {
 
 .achievement:hover {
   transform: translateX(5px);
+
+  border-color: rgba(140, 130, 255, 0.2);
+
+  background: rgba(255, 255, 255, 0.045);
 }
 
 .achievement-icon {
@@ -1160,7 +1222,9 @@ a {
   color: #8179ff;
 
   font-size: 8px;
+
   font-weight: 800;
+
   letter-spacing: 1.5px;
 }
 
@@ -1176,8 +1240,9 @@ a {
   color: #707080;
 
   font-size: 11px;
-}
 
+  line-height: 1.6;
+}
 
 /* =========================================================
    QUICK ACCESS
@@ -1195,11 +1260,13 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   gap: 30px;
 
   padding: 45px;
 
   border: 1px solid rgba(255, 255, 255, 0.08);
+
   border-radius: 25px;
 
   background:
@@ -1209,10 +1276,26 @@ a {
       transparent 35%
     ),
     rgba(255, 255, 255, 0.035);
+
+  transition: 0.3s;
+}
+
+.quick-card:hover {
+  border-color: rgba(140, 130, 255, 0.2);
 }
 
 .quick-card h2 {
+  font-family: "Space Grotesk", sans-serif;
+
   font-size: clamp(30px, 5vw, 48px);
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+}
+
+.quick-card h2 span {
+  color: #8880ff;
 }
 
 .quick-card p {
@@ -1223,6 +1306,7 @@ a {
   color: #777787;
 
   font-size: 12px;
+
   line-height: 1.7;
 }
 
@@ -1243,14 +1327,16 @@ footer {
   padding: 35px 0;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+
   gap: 20px;
 }
 
 .footer-brand {
   display: flex;
   align-items: center;
+
   gap: 12px;
 }
 
@@ -1259,6 +1345,8 @@ footer {
   height: 35px;
 
   border-radius: 10px;
+
+  object-fit: cover;
 }
 
 .footer-brand strong {
@@ -1314,18 +1402,27 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .countdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .quick-card {
     flex-direction: column;
+
     align-items: flex-start;
   }
 
   .footer-content {
     flex-direction: column;
+
     align-items: flex-start;
   }
-
 }
 
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 
 @media (max-width: 500px) {
 
@@ -1341,8 +1438,25 @@ footer {
     padding-top: 50px;
   }
 
+  .hero h1 {
+    font-size: clamp(42px, 14vw, 65px);
+
+    letter-spacing: -3px;
+  }
+
   .hero p {
     font-size: 13px;
+  }
+
+  .hero-buttons {
+    gap: 8px;
+  }
+
+  .primary-button,
+  .secondary-button {
+    padding: 12px 16px;
+
+    font-size: 11px;
   }
 
   .about-grid {
@@ -1361,16 +1475,78 @@ footer {
     padding: 25px 10px;
   }
 
+  .member-avatar {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 18px;
+
+    font-size: 24px;
+  }
+
+  .countdown-section {
+    padding: 90px 20px;
+  }
+
   .countdown-grid {
     grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+  }
+
+  .countdown-box {
+    padding: 20px 10px;
+  }
+
+  .countdown-box strong {
+    font-size: 30px;
+  }
+
+  .memories-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .memory-placeholder {
+    height: 210px;
+  }
+
+  .achievement {
+    align-items: flex-start;
+
+    gap: 14px;
+
+    padding: 18px;
+  }
+
+  .achievement-icon {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 14px;
+
+    font-size: 20px;
+  }
+
+  .quick-section {
+    width: min(1100px, calc(100% - 30px));
+
+    padding-bottom: 80px;
   }
 
   .quick-card {
-    padding: 30px;
+    padding: 30px 25px;
+
+    border-radius: 20px;
+  }
+
+  .quick-card h2 {
+    font-size: 32px;
   }
 
   .maintenance-card {
     padding: 40px 22px;
+
+    border-radius: 24px;
   }
 
   .maintenance-card h1 {
@@ -1381,59 +1557,18 @@ footer {
     font-size: 13px;
   }
 
-}
+  .maintenance-icon {
+    width: 68px;
+    height: 68px;
 
-.memory-placeholder {
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-    position: relative;
-    border-radius: inherit;
-}
+    border-radius: 20px;
 
-.memory-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
+    font-size: 30px;
+  }
 
-/* =========================
-   MEMORIES IMAGES
-========================= */
+  .footer-content {
+    width: min(1100px, calc(100% - 30px));
 
-.memories-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.memory-card {
-    overflow: hidden;
-}
-
-.memory-placeholder {
-    width: 100%;
-    height: 240px;
-    overflow: hidden;
-    position: relative;
-    border-radius: inherit;
-}
-
-.memory-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* HP */
-@media (max-width: 768px) {
-    .memories-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .memory-placeholder {
-        height: 220px;
-    }
+    padding: 28px 0;
+  }
 }
