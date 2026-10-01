@@ -1023,12 +1023,39 @@ a {
    MEMORIES
 ========================================================= */
 
-.memories-grid {
-  display: grid;
+.memories-grid { <div class="memories-grid">
 
-  grid-template-columns: repeat(3, 1fr);
+    <div class="memory-card">
+        <div class="memory-placeholder">
+            <img src="assets/images/foto1.jpg" alt="Our First Chapter">
+        </div>
+        <div class="memory-info">
+            <span>MEMORY 01</span>
+            <h3>Our First Chapter</h3>
+        </div>
+    </div>
 
-  gap: 15px;
+    <div class="memory-card">
+        <div class="memory-placeholder">
+            <img src="assets/images/foto2.jpg" alt="Class Moments">
+        </div>
+        <div class="memory-info">
+            <span>MEMORY 02</span>
+            <h3>Class Moments</h3>
+        </div>
+    </div>
+
+    <div class="memory-card">
+        <div class="memory-placeholder">
+            <img src="assets/images/foto3.jpg" alt="Our Journey">
+        </div>
+        <div class="memory-info">
+            <span>MEMORY 03</span>
+            <h3>Our Journey</h3>
+        </div>
+    </div>
+
+</div>
 }
 
 .memory-card {
