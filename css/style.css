@@ -1572,3 +1572,274 @@ footer {
     padding: 28px 0;
   }
 }
+
+
+/* =====================================================
+   NINECSPENSAKU - TEACHER'S DAY
+===================================================== */
+
+.teacher-section {
+  width: min(1100px, calc(100% - 40px));
+  margin: auto;
+  padding: 100px 0;
+}
+
+.teacher-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.teacher-heading > span,
+.teacher-letter > span,
+.teacher-video > span,
+.teacher-gallery-heading > span {
+  display: block;
+  color: #928aff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+.teacher-heading h2 {
+  color: #fff;
+  font-size: clamp(32px, 6vw, 48px);
+  margin: 14px 0;
+}
+
+.teacher-heading p,
+.teacher-gallery-heading p {
+  color: #aaa;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* PILIHAN GURU */
+
+.teacher-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.teacher-option {
+  width: 100%;
+  padding: 35px 28px;
+  text-align: left;
+  color: white;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 22px;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.teacher-option:hover {
+  transform: translateY(-5px);
+  border-color: #928aff;
+  background: rgba(146,138,255,.08);
+}
+
+.teacher-option > span {
+  font-size: 36px;
+}
+
+.teacher-option h3 {
+  margin: 18px 0 8px;
+  font-size: 20px;
+}
+
+.teacher-option p {
+  color: #aaa;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.teacher-option small {
+  display: block;
+  margin-top: 20px;
+  color: #928aff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* HALAMAN PESAN */
+
+.teacher-page {
+  margin-top: 30px;
+}
+
+.teacher-back {
+  padding: 11px 18px;
+  margin-bottom: 20px;
+  color: #fff;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.teacher-back:hover {
+  border-color: #928aff;
+  color: #b8b0ff;
+}
+
+.teacher-letter {
+  padding: clamp(25px, 5vw, 50px);
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 24px;
+}
+
+.teacher-letter h2 {
+  color: #fff;
+  font-size: clamp(23px, 4vw, 32px);
+  line-height: 1.5;
+  margin: 18px 0 25px;
+}
+
+.teacher-letter p {
+  color: #c4c4d0;
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 17px;
+}
+
+.teacher-letter h3 {
+  color: #b5adff;
+  font-size: 15px;
+  margin-top: 25px;
+}
+
+/* INPUT KEY */
+
+.teacher-key-card {
+  max-width: 650px;
+  margin: auto;
+}
+
+.teacher-key-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-top: 25px;
+}
+
+.teacher-key-card input {
+  width: 100%;
+  padding: 15px 17px;
+  color: white;
+  background: rgba(0,0,0,.25);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 12px;
+  outline: none;
+  font-size: 14px;
+}
+
+.teacher-key-card input:focus {
+  border-color: #928aff;
+}
+
+.teacher-submit {
+  width: 100%;
+  padding: 15px;
+  color: white;
+  background: #756be8;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.teacher-submit:hover {
+  background: #8b80ff;
+}
+
+.teacher-error {
+  color: #ff8585 !important;
+  margin-top: 15px;
+}
+
+/* GALERI FOTO */
+
+.teacher-gallery {
+  margin-top: 50px;
+}
+
+.teacher-gallery-heading {
+  margin-bottom: 22px;
+}
+
+.teacher-gallery-heading h2,
+.teacher-video h2 {
+  color: white;
+  font-size: 25px;
+  margin: 12px 0;
+}
+
+.teacher-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.teacher-photo-grid img {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 17px;
+  border: 1px solid rgba(255,255,255,.1);
+  transition: .3s ease;
+}
+
+.teacher-photo-grid img:hover {
+  transform: translateY(-4px);
+}
+
+/* VIDEO */
+
+.teacher-video {
+  margin-top: 50px;
+}
+
+.teacher-video video {
+  display: block;
+  width: 100%;
+  max-height: 500px;
+  margin-top: 20px;
+  border-radius: 18px;
+  background: #090912;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  .teacher-options {
+    grid-template-columns: 1fr;
+  }
+
+  .teacher-photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .teacher-photo-grid img {
+    height: 230px;
+  }
+}
+
+@media (max-width: 500px) {
+  .teacher-section {
+    padding: 75px 0;
+  }
+
+  .teacher-letter {
+    padding: 25px 20px;
+  }
+
+  .teacher-letter p {
+    font-size: 13px;
+  }
+}
