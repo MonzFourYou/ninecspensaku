@@ -417,7 +417,7 @@ function setupReveal() {
 ===================================================== */
 
 // GANTI DENGAN NAMA WALI KELAS KALIAN
-const HOMEROOM_TEACHER_NAME = "ISI NAMA WALI KELAS DI SINI";
+const HOMEROOM_TEACHER_NAME = "Nungki Ferasti s.pd";
 
 // BUKA PILIHAN HALAMAN
 function openTeacher(type) {
