@@ -546,6 +546,148 @@
 
     </main>
 
+    
+<!-- ================= HARI GURU ================= -->
+<section class="section teacher-section" id="hari-guru">
+  <div class="teacher-heading">
+    <span>♡ A SPECIAL DAY FOR OUR TEACHERS ♡</span>
+    <h2>Happy Teacher's Day</h2>
+    <p>A little appreciation from NineCSpensaKu.</p>
+  </div>
+
+  <div class="teacher-options" id="teacher-options">
+    <button class="teacher-option" onclick="openTeacher('regular')">
+      <span>🍀</span>
+      <h3>Guru Tercinta</h3>
+      <p>Ucapan spesial untuk guru-guru kami.</p>
+      <small>OPEN MESSAGE →</small>
+    </button>
+
+    <button class="teacher-option" onclick="openTeacher('homeroom')">
+      <span>💐</span>
+      <h3>Wali Kelas</h3>
+      <p>Sebuah pesan khusus untuk wali kelas kami.</p>
+      <small>OPEN SPECIAL PAGE →</small>
+    </button>
+  </div>
+
+  <!-- GURU BIASA -->
+  <div class="teacher-message" id="regular-message" hidden>
+    <button class="teacher-back" onclick="backTeacher()">← Kembali</button>
+
+    <div class="teacher-letter">
+      <span>♡ A MESSAGE FOR YOU ♡</span>
+      <h2>Happy Teacher's Day, Dear Teacher! 🤍</h2>
+
+      <p>
+        Terima kasih telah menjadi guru yang selalu membagikan ilmu,
+        memberikan arahan, dan membimbing kami selama di sekolah.
+        Setiap pelajaran, nasihat, dan kebaikan yang diberikan akan
+        selalu menjadi hal berharga bagi kami.
+      </p>
+
+      <p>
+        Maaf jika selama belajar kami terkadang kurang memperhatikan,
+        sulit diatur, atau melakukan kesalahan. Terima kasih karena
+        tetap sabar dalam menghadapi berbagai tingkah laku kami.
+      </p>
+
+      <p>
+        Semoga Ibu/Bapak selalu diberikan kesehatan, kebahagiaan,
+        dan keberkahan dalam setiap langkah. Semoga segala ilmu dan
+        kebaikan yang telah diberikan menjadi amal yang tak pernah terputus.
+      </p>
+
+      <h3>Thank you for being an amazing teacher. ♡</h3>
+    </div>
+  </div>
+
+  <!-- KEY WALI KELAS -->
+  <div class="teacher-key" id="teacher-key" hidden>
+    <button class="teacher-back" onclick="backTeacher()">← Kembali</button>
+
+    <div class="teacher-letter">
+      <span>♡ A SPECIAL SURPRISE ♡</span>
+      <h2>For Our Second Home 💐</h2>
+      <p>Masukkan key untuk membuka pesan spesial dari kelas 9C.</p>
+
+      <form onsubmit="checkTeacherKey(event)">
+        <input
+          type="password"
+          id="teacher-key-input"
+          placeholder="Enter your special key..."
+          autocomplete="off"
+          required
+        >
+        <button type="submit" class="teacher-submit">
+          Continue →
+        </button>
+      </form>
+
+      <p id="teacher-error" class="teacher-error" hidden>
+        Key yang kamu masukkan belum tepat. Coba lagi ya!
+      </p>
+    </div>
+  </div>
+
+  <!-- HALAMAN WALI KELAS -->
+  <div class="teacher-message" id="homeroom-message" hidden>
+    <button class="teacher-back" onclick="backTeacher()">← Kembali</button>
+
+    <div class="teacher-letter">
+      <span>♡ OUR SECOND HOME ♡</span>
+      <h2>Happy Teacher's Day to Our Beloved Homeroom Teacher! 🤍</h2>
+
+      <p>
+        Terima kasih sudah menjadi wali kelas yang selalu membimbing,
+        mengingatkan, dan sabar menghadapi segala tingkah laku kami.
+        Terima kasih karena sudah mau mendengarkan, menasihati,
+        dan menemani perjalanan kami selama di kelas.
+      </p>
+
+      <p>
+        Maaf kalau selama ini kami sering membuat Ibu/Bapak kesal,
+        susah diatur, atau melakukan kesalahan. Terima kasih karena
+        tidak pernah lelah mengarahkan kami untuk menjadi lebih baik.
+      </p>
+
+      <p>
+        Semoga Ibu/Bapak selalu diberikan kesehatan, kebahagiaan,
+        dan kesabaran yang tiada habisnya. Semoga setiap kebaikan
+        dan pengorbanan Ibu/Bapak mendapatkan balasan terbaik.
+      </p>
+
+      <p>
+        Terima kasih sudah menjadi salah satu bagian paling berharga
+        dalam cerita masa sekolah kami. You will always be a part
+        of our memories. We appreciate you so much! ♡
+      </p>
+    </div>
+
+    <!-- GALERI FOTO -->
+    <div class="teacher-gallery">
+      <h2>Our Memories 📸</h2>
+      <p>Little moments, unforgettable memories.</p>
+
+      <div class="teacher-photo-grid">
+        <img src="assets/images/hari-guru/foto1.jpg" alt="Kenangan 9C 1">
+        <img src="assets/images/hari-guru/foto2.jpg" alt="Kenangan 9C 2">
+        <img src="assets/images/hari-guru/foto3.jpg" alt="Kenangan 9C 3">
+      </div>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="teacher-video">
+      <h2>A Little Video For You 🎬</h2>
+      <video controls playsinline preload="metadata">
+        <source src="assets/images/hari-guru/kenangan.mp4" type="video/mp4">
+        Browser kamu belum mendukung video.
+      </video>
+    </div>
+  </div>
+</section>
+
+
 
     <!-- =====================================================
          FOOTER
