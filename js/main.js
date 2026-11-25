@@ -411,19 +411,14 @@ function setupReveal() {
 
 }
 
+/* NINECSPENSAKU - TEACHER'S DAY */
 
-/* =====================================================
-   NINECSPENSAKU - TEACHER'S DAY
-===================================================== */
-
-// GANTI DENGAN NAMA WALI KELAS KALIAN
+// Nama wali kelas sekaligus key
 const HOMEROOM_TEACHER_NAME = "Nungki Ferasti s.pd";
 
-// BUKA PILIHAN HALAMAN
+// Buka halaman
 function openTeacher(type) {
-  const options = document.getElementById("teacher-options");
-
-  if (options) options.hidden = true;
+  document.getElementById("teacher-options").hidden = true;
 
   if (type === "regular") {
     document.getElementById("regular-message").hidden = false;
@@ -431,10 +426,11 @@ function openTeacher(type) {
 
   if (type === "homeroom") {
     document.getElementById("teacher-key").hidden = false;
+    document.getElementById("teacher-key-input").focus();
   }
 }
 
-// KEMBALI KE PILIHAN
+// Tombol kembali
 function backTeacher() {
   document.getElementById("teacher-options").hidden = false;
   document.getElementById("regular-message").hidden = true;
@@ -445,35 +441,23 @@ function backTeacher() {
   document.getElementById("teacher-error").hidden = true;
 }
 
-// PERIKSA NAMA WALI KELAS
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("teacher-key-form");
+// Periksa key
+function checkTeacherKey(event) {
+  event.preventDefault();
 
-  if (!form) return;
+  const input = document.getElementById("teacher-key-input");
+  const error = document.getElementById("teacher-error");
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
+  const enteredKey = input.value.trim().toLowerCase();
+  const correctKey = HOMEROOM_TEACHER_NAME.trim().toLowerCase();
 
-    const input = document
-      .getElementById("teacher-key-input")
-      .value.trim();
-
-    const error = document.getElementById("teacher-error");
-
-    const correctName = HOMEROOM_TEACHER_NAME
-      .trim()
-      .toLowerCase();
-
-    if (
-      correctName !== "isi nama wali kelas di sini" &&
-      input.toLowerCase() === correctName
-    ) {
-      document.getElementById("teacher-key").hidden = true;
-      document.getElementById("homeroom-message").hidden = false;
-
-      error.hidden = true;
-    } else {
-      error.hidden = false;
-    }
-  });
-});
+  if (enteredKey === correctKey) {
+    document.getElementById("teacher-key").hidden = true;
+    document.getElementById("homeroom-message").hidden = false;
+    error.hidden = true;
+  } else {
+    error.hidden = false;
+    input.focus();
+    input.select();
+  }
+}
