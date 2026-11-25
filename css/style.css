@@ -1712,22 +1712,25 @@ footer {
   margin-top: 25px;
 }
 
+
 /* INPUT KEY */
 
-.teacher-key-card {
+.teacher-key .teacher-letter {
   max-width: 650px;
   margin: auto;
 }
 
-.teacher-key-card form {
+.teacher-key form {
   display: flex;
   flex-direction: column;
   gap: 13px;
   margin-top: 25px;
 }
 
-.teacher-key-card input {
+.teacher-key input {
+  display: block;
   width: 100%;
+  min-height: 52px;
   padding: 15px 17px;
   color: white;
   background: rgba(0,0,0,.25);
@@ -1737,12 +1740,14 @@ footer {
   font-size: 14px;
 }
 
-.teacher-key-card input:focus {
+.teacher-key input:focus {
   border-color: #928aff;
 }
 
 .teacher-submit {
+  display: block;
   width: 100%;
+  min-height: 52px;
   padding: 15px;
   color: white;
   background: #756be8;
@@ -1750,7 +1755,6 @@ footer {
   border-radius: 12px;
   font-weight: 700;
   cursor: pointer;
-  transition: .3s ease;
 }
 
 .teacher-submit:hover {
@@ -1760,43 +1764,6 @@ footer {
 .teacher-error {
   color: #ff8585 !important;
   margin-top: 15px;
-}
-
-/* GALERI FOTO */
-
-.teacher-gallery {
-  margin-top: 50px;
-}
-
-.teacher-gallery-heading {
-  margin-bottom: 22px;
-}
-
-.teacher-gallery-heading h2,
-.teacher-video h2 {
-  color: white;
-  font-size: 25px;
-  margin: 12px 0;
-}
-
-.teacher-photo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-
-.teacher-photo-grid img {
-  display: block;
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-  border-radius: 17px;
-  border: 1px solid rgba(255,255,255,.1);
-  transition: .3s ease;
-}
-
-.teacher-photo-grid img:hover {
-  transform: translateY(-4px);
 }
 
 /* VIDEO */
