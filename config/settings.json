@@ -18,7 +18,7 @@
   },
 
   "maintenance": {
-    "enabled": false,
+    "enabled": true,
     "title": "NineCSpensaKu sedang diperbarui",
     "message": "Ada sesuatu kesalahan didalam sistem,mohon untuk menunggu sementara sampai web selesai di update",
     "estimated": "25 November - 26 November "
